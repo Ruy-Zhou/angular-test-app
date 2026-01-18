@@ -1,0 +1,13 @@
+<div class="article-list">
+    <h2>All Articles ({{articles().length}})</h2>
+    @for (item of articles(); track item.title; let index = $index, first = $first) {
+        <div class="article-item {{first ? 'first-item' : ''}}">
+            <h2>
+                {{index + 1}}. {{ item.title }}
+                <a (click)="onDeleteArticle(item.id)" href="javascript:void(0)" class="article-link">delete</a>
+            </h2>
+            <p>{{ item.content }}</p>
+        </div>
+    }
+    <ng-content></ng-content>
+</div>

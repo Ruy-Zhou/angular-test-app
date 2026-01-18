@@ -1,0 +1,21 @@
+<form (submit)="addArticle()">
+    <p>{{message()}}</p>
+    <div class="form-group">
+        <label>
+            Title:
+            <input type="text" name="title" [(ngModel)]="title" class="form-control {{isTitleValid()}}">
+        </label>
+    </div>
+    <div class="form-group">
+        <label>
+            Content:
+            <textarea name="content" [(ngModel)]="content" class="form-control {{isContentValid()}}"></textarea>
+        </label>
+    </div>
+    <div class="form-group">
+        <button type="submit">Add Article</button>
+    </div>
+</form>
+<app-article-item [(message)]="message" [articles]="articles" (deleteArticle)="deleteArticle($event)">
+    <p class="text-info"><i>You can click the delete link to delete an article.</i></p>
+</app-article-item>

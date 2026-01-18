@@ -1,0 +1,17 @@
+<p>login works!</p>
+<form (submit)="login()">
+  <div class="form-group">
+    <label>
+      Username:
+      <input type="text" name="username" [class]="isUsernameValid()" [(ngModel)]="username">
+    </label>
+  </div>
+  <div class="form-group">
+    <label>
+      Password:
+      <input type="password" name="password" [class]="isPasswordValid()" [(ngModel)]="password">
+    </label>
+  </div>
+  <div class="form-group">
+    <button [disabled]="isLoading()" type="submit">{{isLoading() ? 'loading...' : 'Login'}}</button>
+  </div>

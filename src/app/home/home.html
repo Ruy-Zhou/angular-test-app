@@ -1,0 +1,8 @@
+
+<p ng-click="setMessage('hello ruy')" class="block">
+  <input type="text" (input)="setMessage($event.target.value)" [value]="message()">
+  <button (click)="reverseMessage()">Reverse</button>
+</p>
+<p class="block">
+  {{ title() }} - {{ message() }}
+</p>
