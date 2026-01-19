@@ -16,5 +16,6 @@ export const routes: Routes = [
             { path: 'role', component: Role }
         ]
     },
-    { path: 'article', loadComponent: () => import('./article/article').then(m => m.Article) }
+    { path: 'article', loadComponent: () => import('./article/article').then(m => m.Article) },
+    { path: 'todo', loadComponent: () => import('./todo/todo').then(m => m.Todo) }
 ];

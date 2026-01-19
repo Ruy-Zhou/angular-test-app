@@ -1,0 +1,14 @@
+<p>todo works!</p>
+<form (submit)="addTask()">
+    <input type ="text" name="todo" [(ngModel)]="task" />
+    <button type="submit">Add Task</button>
+</form>
+
+<ol class="task-list">
+    @for(task of tasks(); track $index) {
+        <li class="task-item">
+            {{ task }}
+            <a href="javascript:;" (click)="deleteTask($index)">Delete Task</a>
+        </li>
+    }
+</ol>
