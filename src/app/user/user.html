@@ -1,35 +1,35 @@
-<p>user works!</p>
 
 @if (isEdit()) {
 <div class="user-detail">
     <p>
+      <label>User name:</label>
         <input type="text" [value]="username()">
     </p>
     <p>
+      <label>Nick name:</label>
         <input type="text" [value]="nickname()">
     </p>
     <p>
+      <label>Email:</label>
         <input type="text" [value]="email()">
     </p>
     <p>
         <button (click)="save()">Save</button>
     </p>
 </div>
-} 
-@else {
+} @else {
     <div class="user-detail">
     <p>
-      {{ fullname() }}
+     Full Name: {{ fullname() }}
     </p>
     <p>
-      {{ username() }}
+      User name: {{ username() }}
     </p>
     <p>
-      {{ nickname() }}
+      Nick name: {{ nickname() }}
     </p>
     <p>
-      {{ email() }}
+      Email: {{ email() }}
     </p>
 </div>
 }
-<router-outlet></router-outlet>

@@ -6,6 +6,8 @@ import { en_US, provideNzI18n } from 'ng-zorro-antd/i18n';
 import { registerLocaleData } from '@angular/common';
 import en from '@angular/common/locales/en';
 import { provideHttpClient, withFetch } from '@angular/common/http';
+import { provideStore } from '@ngrx/store';
+import { reducers, metaReducers } from './reducers';
 
 registerLocaleData(en);
 
@@ -15,5 +17,6 @@ export const appConfig: ApplicationConfig = {
     provideRouter(routes),
     provideNzI18n(en_US),
     provideHttpClient(withFetch()),
-  ]
+    provideStore(reducers, { metaReducers })
+]
 };

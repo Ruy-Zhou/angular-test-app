@@ -38,8 +38,10 @@ export class Article {
       title: this.title(),
       content: this.content(), 
     };
-
+    // show message
+    this.message.set('added: ' + article.title);
     this.articles.update((articles) => [...articles, article]);
+    // clear input
     this.title.set('');
     this.content.set('');
   }
