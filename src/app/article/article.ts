@@ -1,10 +1,12 @@
-import { Component, computed, Signal, signal } from '@angular/core';
+import { Component, computed, HostBinding, HostListener, signal } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { ArticleItem } from './article-item/article-item';
+import { ArticleHead } from './article-item/article-head';
+import { ArticleFoot } from './article-item/article-foot';
 
 @Component({
   selector: 'app-article',
-  imports: [FormsModule, ArticleItem],
+  imports: [FormsModule, ArticleItem, ArticleHead, ArticleFoot],
   templateUrl: './article.html',
   styleUrl: './article.less',
 })
@@ -36,7 +38,7 @@ export class Article {
     const article: ArticleEntity = {
       id: this.articles().length + 1,
       title: this.title(),
-      content: this.content(), 
+      content: this.content(),
     };
     // show message
     this.message.set('added: ' + article.title);
@@ -44,5 +46,15 @@ export class Article {
     // clear input
     this.title.set('');
     this.content.set('');
+  }
+
+  @HostBinding('style')
+  get style() {
+    return 'background: yellow;'
+  }
+
+  @HostListener('click', ['$event'])
+  onClickList(e: MouseEvent) {
+    console.log((e.target as HTMLElement).innerText)
   }
 }

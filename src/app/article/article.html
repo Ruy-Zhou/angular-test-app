@@ -17,5 +17,5 @@
     </div>
 </form>
 <app-article-item [(message)]="message" [articles]="articles" (deleteArticle)="deleteArticle($event)">
-    <p class="text-info"><i>You can click the delete link to delete an article.</i></p>
+    <h2>All Articles ({{articles().length}})</h2>
 </app-article-item>

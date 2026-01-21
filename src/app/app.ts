@@ -1,4 +1,4 @@
-import { Component, signal } from '@angular/core';
+import { Component, effect, signal } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 
 @Component({
@@ -10,14 +10,17 @@ import { RouterOutlet } from '@angular/router';
 export class App {
   protected nowTime = signal(new Date().toLocaleString());
   protected timer: any;
-  
+
   constructor() {
-    this.timer = setInterval(() => {
-      this.nowTime.set(new Date().toLocaleString());
-    }, 1000);
+    effect((onCleanup) => {
+      const timer = setInterval(() => {
+        this.nowTime.set(new Date().toLocaleString());
+      }, 1000);
+
+      onCleanup(() => {
+        clearInterval(timer);
+      })
+    })
   }
 
-  onCleanup() {
-    clearInterval(this.timer);
-  }
 }
