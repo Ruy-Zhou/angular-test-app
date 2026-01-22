@@ -1,0 +1,17 @@
+<ol class="todo-list">
+    @for(item of tasks(); track item.id) {
+        <li>
+            <p [class]="['todo-item', item.deleted ? 'is-deleted': '', item.done ? 'is-done': '']">
+                <span class="name">{{ item.task }}</span>
+                <span class="buttons">
+                    @if (!item.done && !item.deleted) {
+                        <a href="javascript:;" (click)="finishTask(item.id)">Finish</a>
+                    }
+                    @if (!item.deleted) {
+                        <a href="javascript:;" (click)="deleteTask(item.id)">Delete</a>
+                    }
+                </span>
+            </p>
+        </li>
+    }
+</ol>

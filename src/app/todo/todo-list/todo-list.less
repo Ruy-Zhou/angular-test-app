@@ -1,0 +1,28 @@
+.todo-list {
+    margin-top: 20px;
+}
+
+.todo-item {
+    display: flex;
+    align-items: flex-start;
+
+    .name, .buttons {
+        flex: 1;
+    }
+    
+    .buttons {
+        text-align: right;
+    }
+
+    a:last-child {
+        margin-left: 10px;
+    }
+
+    &.is-deleted {
+        text-decoration: line-through;
+    }
+
+    &.is-done .name {
+        color: green;
+    }
+}

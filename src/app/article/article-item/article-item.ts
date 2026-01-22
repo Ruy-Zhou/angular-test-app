@@ -1,7 +1,9 @@
+import { UpperCasePipe } from "@angular/common";
 import { Component, EventEmitter, Input, model, Output, Signal, signal } from "@angular/core";
 @Component({
-  selector: 'app-article-item, article-head, article-foot',
+  selector: 'app-article-item',
   templateUrl: './article-item.html',
+  imports: [UpperCasePipe]
 })
 export class ArticleItem {
   @Input() articles: Signal<ArticleEntity[]> = signal([]);

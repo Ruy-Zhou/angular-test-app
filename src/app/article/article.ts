@@ -1,12 +1,11 @@
 import { Component, computed, HostBinding, HostListener, signal } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { ArticleItem } from './article-item/article-item';
-import { ArticleHead } from './article-item/article-head';
-import { ArticleFoot } from './article-item/article-foot';
+import { Todo } from '../todo/todo';
 
 @Component({
   selector: 'app-article',
-  imports: [FormsModule, ArticleItem, ArticleHead, ArticleFoot],
+  imports: [FormsModule, ArticleItem],
   templateUrl: './article.html',
   styleUrl: './article.less',
 })
@@ -50,7 +49,7 @@ export class Article {
 
   @HostBinding('style')
   get style() {
-    return 'background: yellow;'
+    return 'background: #a4d1d3; padding: 10px;'
   }
 
   @HostListener('click', ['$event'])
