@@ -8,7 +8,7 @@ import { Component, effect, signal } from '@angular/core';
 })
 export class Home {
 protected readonly title = signal('angular-test-app');
-  protected message = signal('hello ng-zorro-antd');
+  protected message = signal('hello ng');
   protected effectRef: any;
 
   constructor() {
