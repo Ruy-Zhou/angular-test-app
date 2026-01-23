@@ -17,7 +17,7 @@
     </div>
 </form>
 <app-article-item [(message)]="message" [articles]="articles" (deleteArticle)="deleteArticle($event)">
-    @switch(articles.length) {
+    @switch(articles().length) {
         @case(5) {
             <h1>The articles count is hitting 5. Great!</h1>
         }

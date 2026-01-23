@@ -1,18 +1,19 @@
-<!-- NG-ZORRO -->
- <div class="app-container">
+<main class="app-container">
   <header class="app-header">
     <nav class="app-header-content">
       <a href="/home" class="app-header-item">Home</a>
       <a href="/user" class="app-header-item">User</a>
       <a href="/article" class="app-header-item">Article</a>
       <a href="/todo" class="app-header-item">Todo</a>
+      <a href="/movies" class="app-header-item">Movies</a>
     </nav>
     <div class="app-login">
       <span class="now-time">{{ nowTime() }}</span>
       <a href="/login" class="app-header-item">Login</a>
     </div>
   </header>
+  <mat-divider />
   <div class="app-content">
     <router-outlet></router-outlet>
   </div>
-</div>
+</main>

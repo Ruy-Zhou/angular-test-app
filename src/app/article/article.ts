@@ -49,7 +49,7 @@ export class Article {
 
   @HostBinding('style')
   get style() {
-    return 'background: #a4d1d3; padding: 10px;'
+    return 'padding: 10px;'
   }
 
   @HostListener('click', ['$event'])

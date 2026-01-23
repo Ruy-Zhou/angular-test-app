@@ -1,9 +1,10 @@
 import { Component, effect, signal } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
+import { MatDividerModule } from '@angular/material/divider'
 
 @Component({
   selector: '.app-root',
-  imports: [RouterOutlet],
+  imports: [RouterOutlet, MatDividerModule],
   templateUrl: './app.html',
   styleUrl: './app.less'
 })

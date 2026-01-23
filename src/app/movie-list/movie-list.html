@@ -1,1 +1,25 @@
-<p>movie-list works!</p>
+<mat-grid-list cols="3" rowHeight="2:1">
+  @for (item of categories(); track item.category) {
+    @for (movie of item.interests; track movie.id) {
+      <mat-grid-tile>
+        <mat-card>
+          <mat-card-header>
+            <div mat-card-avatar class="example-header-image"></div>
+            <mat-card-title>{{ movie.name }}</mat-card-title>
+            <mat-card-subtitle>{{ movie.id }}</mat-card-subtitle>
+          </mat-card-header>
+          <img mat-card-image ngSrc="movie.primaryImage[0]?.url" [alt]="movie.name" />
+          <mat-card-content>
+            <p>
+              {{ movie.description }}
+            </p>
+          </mat-card-content>
+          <mat-card-actions>
+            <button matButton>LIKE</button>
+            <button matButton>SHARE</button>
+          </mat-card-actions>
+        </mat-card>
+      </mat-grid-tile>
+    }
+  }
+</mat-grid-list>
