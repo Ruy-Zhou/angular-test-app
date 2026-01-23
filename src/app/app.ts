@@ -1,10 +1,10 @@
 import { Component, effect, signal } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { RouterOutlet, RouterLink, RouterLinkWithHref } from '@angular/router';
 import { MatDividerModule } from '@angular/material/divider'
 
 @Component({
   selector: '.app-root',
-  imports: [RouterOutlet, MatDividerModule],
+  imports: [RouterOutlet, RouterLink, MatDividerModule, RouterLinkWithHref],
   templateUrl: './app.html',
   styleUrl: './app.less'
 })
