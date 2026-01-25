@@ -1,0 +1,28 @@
+<form class="form" (ngSubmit)="onSubmit()" [formGroup]="formGroup">
+    <div>
+        <label >First Name:
+            <input class="form-item" name="firstName" formControlName="firstName" />
+        </label>
+    </div>
+    <div>
+        <label>Last Name:
+            <input class="form-item" name="lastName" formControlName="lastName" />
+        </label>
+    </div>
+    <div>
+        <label>Age:
+            <input class="form-item" type="number" name="age" formControlName="age" />
+        </label>
+    </div>
+    <div>
+        <label>Gender: </label>
+        <div class="form-item">
+            <label><input style="width: auto;" type="radio" name="gender" value="girl"/>Girl</label>
+            <label><input style="width: auto;" type="radio" name="gender" value="boy" />Body</label>
+        </div>
+    </div>
+
+    <button type="submit">Submit</button>
+
+    <div>{{ message() }}</div>
+</form>
