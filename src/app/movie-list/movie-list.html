@@ -1,6 +1,7 @@
 <mat-grid-list cols="3" rowHeight="2:1">
   @for (item of categories(); track item.category) {
     @for (movie of item.interests; track movie.id) {
+      {{ movie.name }}
       <mat-grid-tile>
         <mat-card>
           <mat-card-header>
@@ -8,7 +9,7 @@
             <mat-card-title>{{ movie.name }}</mat-card-title>
             <mat-card-subtitle>{{ movie.id }}</mat-card-subtitle>
           </mat-card-header>
-          <img mat-card-image ngSrc="movie.primaryImage[0]?.url" [alt]="movie.name" />
+          <img NgOptimizedImage [ngSrc]="movie.primaryImage.url" [width]="movie.primaryImage.width" [height]="movie.primaryImage.height" [alt]="movie.name" />
           <mat-card-content>
             <p>
               {{ movie.description }}

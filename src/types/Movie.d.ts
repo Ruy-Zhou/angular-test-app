@@ -6,7 +6,7 @@ interface MovieCategory {
 interface Movie {
   id: string
   name: string
-  primaryImage: MovieImage[]
+  primaryImage: MovieImage
   description: string
 }
 

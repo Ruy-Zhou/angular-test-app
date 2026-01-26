@@ -16,14 +16,11 @@
         <button type="submit">Add Article</button>
     </div>
 </form>
-<app-article-item [(message)]="message" [articles]="articles" (deleteArticle)="deleteArticle($event)">
-    @switch(articles().length) {
-        @case(5) {
-            <h1>The articles count is hitting 5. Great!</h1>
-        }
 
-        @default {
-            <h2>All Articles ({{articles().length}})</h2>
-        }
-    }
-</app-article-item>
+<article-list
+  [articles]="articles"
+  [(message)]="message"
+  (deleteArticle)="deleteArticle($event)"
+>
+  <h3>All Articles ({{ articles().length }})</h3>
+</article-list>

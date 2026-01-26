@@ -1,11 +1,11 @@
 import { Component, computed, HostBinding, HostListener, signal } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { ArticleItem } from './article-item/article-item';
+import { ArticleList } from './article-list/article-list';
 import { Todo } from '../todo/todo';
 
 @Component({
   selector: 'app-article',
-  imports: [FormsModule, ArticleItem],
+  imports: [FormsModule, ArticleList],
   templateUrl: './article.html',
   styleUrl: './article.less',
 })

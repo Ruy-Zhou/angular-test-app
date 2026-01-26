@@ -1,4 +1,4 @@
-import { Component, computed, contentChild, ElementRef, HostListener, inject, signal } from '@angular/core';
+import { Component, ElementRef, HostBinding, HostListener, inject, signal } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { TodoList } from './todo-list/todo-list';
 
@@ -52,9 +52,18 @@ export class Todo {
     }
   }
 
+  @HostBinding('style')
+  get bindStyle() {
+    return `
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      padding: 50px;
+    `
+  }
+
   @HostListener('click', ['$event'])
   clickPage(e: MouseEvent) {
-    alert(this.elementRef.nativeElement.innerText)
+    console.log(this.elementRef.nativeElement.innerText)
   }
 
   trackMouse(e: MouseEvent) {
