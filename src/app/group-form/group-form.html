@@ -1,0 +1,16 @@
+<form [formGroup]="formGroup" (ngSubmit)="submitForm()">
+    <label for="firstName">First Name:</label>
+    <input id="firstName" type="text" formControlName="firstName" />
+    <label for="lastName"></label>
+    <input id="lastName" type="text" formControlName="lastName" />
+    <label for="age"></label>
+    <input id="age" type="number" formControlName="age" />
+    <label for="gender"></label>
+    <select id="gender" formControlName="gender">
+        <option value="girl">Girl</option>
+        <option value="body">Boy</option>
+    </select>
+
+    <button [disabled]="!formGroup.valid" type="submit">Submit</button>
+    <button (click)="resetForm()">Reset</button>
+</form>

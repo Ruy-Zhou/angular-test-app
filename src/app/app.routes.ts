@@ -19,5 +19,6 @@ export const routes: Routes = [
     { path: 'article', loadComponent: () => import('./article/article').then(m => m.Article) },
     { path: 'todo', loadComponent: () => import('./todo/todo').then(m => m.Todo) },
     { path: 'movies', loadComponent: () => import('./movie-list/movie-list').then(m => m.MovieList)},
-    { path: 'form', loadComponent: () => import('./form/form').then(m => m.Form)}
+    { path: 'form', loadComponent: () => import('./form/form').then(m => m.Form)},
+    { path: 'group-form', loadComponent: () => import('./group-form/group-form').then(m => m.GroupForm)}
 ];
